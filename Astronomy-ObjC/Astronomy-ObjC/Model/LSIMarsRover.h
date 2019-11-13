@@ -7,13 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LSISolDescription;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIMarsRover : NSObject
+
 @property NSString *name;
 @property NSDate *launchDate;
 @property NSDate *landingDate;
+
+typedef NS_ENUM(NSUInteger, LSIMarsRoverStatus) {
+    LSIMarkRoverStatusActive,
+    LSIMarsRoverStatusComplete,
+};
+
+@property LSIMarsRoverStatus status;
+@property NSInteger maxSol;
+@property NSDate *maxDate;
+@property NSInteger numberOfPhotos;
+@property NSArray<LSISolDescription *> *solDescriptions;
 
 @end
 
